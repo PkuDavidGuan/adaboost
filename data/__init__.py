@@ -1,4 +1,4 @@
-from .Abalone import Abalone
+from .Yeast import Yeast
 
 __factory = {
   'yeast':Yeast,

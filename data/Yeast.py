@@ -10,13 +10,7 @@ def parse(data):
 
   ori_x = data[:-class_num]
   ori_y = [int(i) * 2 - 1 for i in data[-class_num:]]
-
-  x_array, y_array = [], []
-  for i in range(class_num):
-    x_array.append(ori_x + [i])
-  y_array = ori_y
-
-  return x_array, y_array
+  return ori_x, ori_y
 
 
 def Yeast(data_dir):
@@ -28,8 +22,8 @@ def Yeast(data_dir):
   x_train, y_train = [], []
   for data in train_data:
     x_array, y_array = parse(data)
-    x_train = x_train + x_array
-    y_train = y_train + y_array
+    x_train.append(x_array)
+    y_train.append(y_array)
   x_train = np.array(x_train)
   y_train = np.array(y_train, dtype=np.int8)
 
@@ -38,8 +32,8 @@ def Yeast(data_dir):
   x_test, y_test = [], []
   for data in test_data:
     x_array, y_array = parse(data)
-    x_test = x_test + x_array
-    y_test = y_test + y_array
+    x_test.append(x_array)
+    y_test.append(y_array)
   x_test = np.array(x_test)
   y_test = np.array(y_test, dtype=np.int8)
 
@@ -49,3 +43,7 @@ def Yeast(data_dir):
 if __name__ == '__main__':
   x_train, x_test, y_train, y_test = Yeast('/Users/DavidGuan/Desktop/机器学习/homework2/data/yeast/')
   print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
+  print(x_train[0])
+  print(y_train[0])
+  print(x_test[0])
+  print(y_test[0])
