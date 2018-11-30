@@ -41,7 +41,7 @@ def Yeast(data_dir):
 
 
 if __name__ == '__main__':
-  x_train, x_test, y_train, y_test = Yeast('/Users/DavidGuan/Desktop/机器学习/homework2/data/yeast/')
+  x_train, x_test, y_train, y_test = Yeast('/Users/gaojingyue/Desktop/adaboost/data/yeast/')
   print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
   print(x_train[0])
   print(y_train[0])
